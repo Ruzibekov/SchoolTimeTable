@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Расписание для школы</string>
+    <string name="time_table">Расписание</string>
 </resources>
