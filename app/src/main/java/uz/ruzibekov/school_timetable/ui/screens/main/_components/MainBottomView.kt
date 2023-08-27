@@ -1,26 +1,18 @@
 package uz.ruzibekov.school_timetable.ui.screens.main._components
 
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.AccountBox
-import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.Done
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Notifications
+import androidx.compose.material3.Icon
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import uz.ruzibekov.school_timetable.ui.screens.main.BottomNavItem
-import androidx.compose.material3.BottomAppBar
-import androidx.compose.material3.Icon
-import androidx.compose.material3.NavigationBar
-import androidx.compose.material3.NavigationBarItem
-import androidx.compose.material3.Text
 
 object MainBottomView {
 
@@ -50,8 +42,8 @@ object MainBottomView {
                     onClick = {
                         navController.navigate(screen.route) {
 
-                            navController.graph.startDestinationRoute?.let { screen_route ->
-                                popUpTo(screen_route) {
+                            navController.graph.startDestinationRoute?.let { route ->
+                                popUpTo(route) {
                                     saveState = true
                                 }
                             }
@@ -59,7 +51,6 @@ object MainBottomView {
                             restoreState = true
                         }
                     },
-                    modifier = Modifier.padding(8.dp)
                 )
             }
         }

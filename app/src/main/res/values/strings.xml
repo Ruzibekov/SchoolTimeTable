@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Расписание для школы</string>
     <string name="time_table">Расписание</string>
+    <string name="assignments">Задания</string>
+    <string name="time_table_add">Для добавление уроков нажмите кнопку "Добавить"</string>
+    <string name="assignments_add">Нажмите кнопку Плюс чтобы добавить новую домашнюю работу"</string>
 </resources>

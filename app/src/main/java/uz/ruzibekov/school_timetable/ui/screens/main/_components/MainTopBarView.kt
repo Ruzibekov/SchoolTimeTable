@@ -1,9 +1,11 @@
 package uz.ruzibekov.school_timetable.ui.screens.main._components
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -17,6 +19,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import uz.ruzibekov.school_timetable.R
+import uz.ruzibekov.school_timetable.ui.theme.AppColor
 
 object MainTopBarView {
 
@@ -26,25 +29,27 @@ object MainTopBarView {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(44.dp),
+                .background(AppColor.Primary)
+                .padding(20.dp),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
 
             Text(
                 text = stringResource(R.string.time_table),
-                fontSize = 32.sp,
+                fontSize = 26.sp,
                 color = Color.White
             )
 
             IconButton(
-                onClick = { /*TODO*/ },
+                onClick = { onClick() },
                 modifier = Modifier.size(24.dp)
             ) {
 
                 Icon(
                     painter = painterResource(id = R.drawable.ic_add),
-                    contentDescription = "add icon"
+                    contentDescription = "add icon",
+                    tint = Color.White
                 )
             }
         }
