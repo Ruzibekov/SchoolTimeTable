@@ -6,7 +6,6 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -15,19 +14,20 @@ import uz.ruzibekov.school_timetable.ui.screens.main._components.MainBottomView
 import uz.ruzibekov.school_timetable.ui.screens.main._components.MainTopBarView
 import uz.ruzibekov.school_timetable.ui.screens.main._fragments.HomeAssignmentsView
 import uz.ruzibekov.school_timetable.ui.screens.main._fragments.HomeTimeTableView
+import uz.ruzibekov.school_timetable.ui.screens.main.listeners.MainListeners
 
 object MainContentView {
 
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
-    fun Default() {
+    fun Default(listeners: MainListeners) {
 
         val navController = rememberNavController()
 
         Scaffold(
             topBar = {
                 MainTopBarView.Default {
-                    //todo add
+                    listeners.openCreateTimeTableScreen()
                 }
             },
             bottomBar = {
@@ -56,10 +56,4 @@ object MainContentView {
             }
         }
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-private fun Preview() {
-    MainContentView.Default()
 }
