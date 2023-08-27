@@ -27,7 +27,12 @@
         <activity
             android:name=".ui.screens.subject.create.CreateSubjectActivity"
             android:exported="true"
-            android:theme="@style/Theme.TimeTable"/>
+            android:theme="@style/Theme.TimeTable" />
+
+        <activity
+            android:name=".ui.screens.assignment.create.CreateAssignmentActivity"
+            android:exported="true"
+            android:theme="@style/Theme.TimeTable" />
 
     </application>
 
