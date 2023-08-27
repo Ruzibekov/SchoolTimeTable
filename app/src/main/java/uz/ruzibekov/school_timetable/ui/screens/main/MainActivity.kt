@@ -6,7 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import uz.ruzibekov.school_timetable.ui.screens.main._content.MainContentView
 import uz.ruzibekov.school_timetable.ui.screens.main.listeners.MainListeners
-import uz.ruzibekov.school_timetable.ui.screens.time_table.create.CreateTimeTableActivity
+import uz.ruzibekov.school_timetable.ui.screens.subject.create.CreateSubjectActivity
 import uz.ruzibekov.school_timetable.ui.theme.SchoolTimeTableTheme
 
 class MainActivity : ComponentActivity(), MainListeners {
@@ -24,7 +24,7 @@ class MainActivity : ComponentActivity(), MainListeners {
     }
 
     override fun openCreateTimeTableScreen() {
-        val intent = Intent(this, CreateTimeTableActivity::class.java)
+        val intent = Intent(this, CreateSubjectActivity::class.java)
         startActivity(intent)
     }
 }
