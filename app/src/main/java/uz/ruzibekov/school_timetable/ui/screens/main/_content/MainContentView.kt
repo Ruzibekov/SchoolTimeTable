@@ -14,8 +14,8 @@ import androidx.navigation.compose.rememberNavController
 import uz.ruzibekov.school_timetable.ui.screens.main.BottomNavItem
 import uz.ruzibekov.school_timetable.ui.screens.main._components.MainBottomView
 import uz.ruzibekov.school_timetable.ui.screens.main._components.MainTopBarView
-import uz.ruzibekov.school_timetable.ui.screens.main._fragments.HomeAssignmentsView
-import uz.ruzibekov.school_timetable.ui.screens.main._fragments.HomeTimeTableView
+import uz.ruzibekov.school_timetable.ui.screens.main._fragments.HomeAssignmentsFragmentView
+import uz.ruzibekov.school_timetable.ui.screens.main._fragments.HomeTimeTableFragmentView
 import uz.ruzibekov.school_timetable.ui.screens.main.listeners.MainListeners
 import uz.ruzibekov.school_timetable.ui.screens.main.state.MainState
 
@@ -52,11 +52,11 @@ object MainContentView {
                 ) {
 
                     composable(BottomNavItem.TimeTable.route) {
-                        HomeTimeTableView.Default(state)
+                        HomeTimeTableFragmentView.Default(state)
                     }
 
                     composable(BottomNavItem.Assignments.route) {
-                        HomeAssignmentsView.Default()
+                        HomeAssignmentsFragmentView.Default(state)
                     }
                 }
             }

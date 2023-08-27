@@ -12,5 +12,5 @@ interface SubjectDao {
     suspend fun insert(entity: SubjectEntity)
 
     @Query("SELECT * FROM subjects")
-    suspend fun getSubjectList(): List<SubjectEntity>
+    suspend fun getList(): List<SubjectEntity>
 }

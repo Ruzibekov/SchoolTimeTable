@@ -5,4 +5,5 @@
     <string name="time_table_add">Для добавление уроков нажмите кнопку "Добавить"</string>
     <string name="assignments_add">Нажмите кнопку Плюс чтобы добавить новую домашнюю работу"</string>
     <string name="new_subject">Новый предмет</string>
+    <string name="new_assignment">Новое задание</string>
 </resources>

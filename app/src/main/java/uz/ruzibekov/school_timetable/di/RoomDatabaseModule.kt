@@ -7,6 +7,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import uz.ruzibekov.school_timetable.data.dao.AssignmentDao
 import uz.ruzibekov.school_timetable.data.dao.SubjectDao
 import uz.ruzibekov.school_timetable.data.database.AppDatabase
 
@@ -28,5 +29,10 @@ object RoomDatabaseModule {
     @Provides
     fun provideSubjectDao(database: AppDatabase): SubjectDao {
         return database.subjectDao()
+    }
+
+    @Provides
+    fun provideAssignmentDao(database: AppDatabase): AssignmentDao {
+        return database.assignmentDao()
     }
 }

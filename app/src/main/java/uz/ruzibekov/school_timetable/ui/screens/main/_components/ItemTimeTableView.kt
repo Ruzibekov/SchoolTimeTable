@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.dp
 import uz.ruzibekov.school_timetable.data.entity.SubjectEntity
 import uz.ruzibekov.school_timetable.ui.theme.AppColor
 
-object TimeTableItemView {
+object ItemTimeTableView {
 
     @Composable
     fun Default(entity: SubjectEntity) {

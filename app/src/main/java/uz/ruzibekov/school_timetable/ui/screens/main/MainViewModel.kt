@@ -5,13 +5,15 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import uz.ruzibekov.school_timetable.data.dao.AssignmentDao
 import uz.ruzibekov.school_timetable.data.dao.SubjectDao
 import uz.ruzibekov.school_timetable.ui.screens.main.state.MainState
 import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val dao: SubjectDao
+    private val subjectDao: SubjectDao,
+    private val assignmentDao: AssignmentDao
 ) : ViewModel() {
 
     val state = MainState()
@@ -20,6 +22,9 @@ class MainViewModel @Inject constructor(
 
     fun fetch() = scope.launch {
         state.timeTables.clear()
-        state.timeTables.addAll(dao.getSubjectList())
+        state.timeTables.addAll(subjectDao.getList())
+
+        state.assignments.clear()
+        state.assignments.addAll(assignmentDao.getList())
     }
 }

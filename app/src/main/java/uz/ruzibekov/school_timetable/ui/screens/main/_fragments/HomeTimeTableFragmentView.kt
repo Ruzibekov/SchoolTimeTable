@@ -20,10 +20,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import uz.ruzibekov.school_timetable.R
-import uz.ruzibekov.school_timetable.ui.screens.main._components.TimeTableItemView
+import uz.ruzibekov.school_timetable.ui.screens.main._components.ItemTimeTableView
 import uz.ruzibekov.school_timetable.ui.screens.main.state.MainState
 
-object HomeTimeTableView {
+object HomeTimeTableFragmentView {
 
     @Composable
     fun Default(state: MainState) {
@@ -37,7 +37,7 @@ object HomeTimeTableView {
                 ) {
 
                     items(state.timeTables) { entity ->
-                        TimeTableItemView.Default(entity = entity)
+                        ItemTimeTableView.Default(entity = entity)
                     }
                 }
 
