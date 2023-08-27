@@ -7,6 +7,7 @@ import androidx.activity.viewModels
 import dagger.hilt.android.AndroidEntryPoint
 import uz.ruzibekov.school_timetable.ui.screens.subject.create._content.CreateSubjectContentView
 import uz.ruzibekov.school_timetable.ui.screens.subject.create.listeners.CreateSubjectListeners
+import uz.ruzibekov.school_timetable.ui.theme.SchoolTimeTableTheme
 
 @AndroidEntryPoint
 class CreateSubjectActivity : ComponentActivity(), CreateSubjectListeners {
@@ -16,10 +17,12 @@ class CreateSubjectActivity : ComponentActivity(), CreateSubjectListeners {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            CreateSubjectContentView.Default(
-                state = viewModel.state,
-                listeners = this
-            )
+            SchoolTimeTableTheme {
+                CreateSubjectContentView.Default(
+                    state = viewModel.state,
+                    listeners = this
+                )
+            }
         }
     }
 

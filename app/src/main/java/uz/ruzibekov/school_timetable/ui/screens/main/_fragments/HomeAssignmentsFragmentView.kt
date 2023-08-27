@@ -2,6 +2,7 @@ package uz.ruzibekov.school_timetable.ui.screens.main._fragments
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -30,7 +31,10 @@ object HomeAssignmentsFragmentView {
         Column {
 
             if (state.assignments.isNotEmpty())
-                LazyColumn(modifier = Modifier.fillMaxSize()) {
+                LazyColumn(
+                    modifier = Modifier.fillMaxSize(),
+                    contentPadding = PaddingValues(top = 16.dp)
+                ) {
 
                     items(state.assignments) { entity ->
 
