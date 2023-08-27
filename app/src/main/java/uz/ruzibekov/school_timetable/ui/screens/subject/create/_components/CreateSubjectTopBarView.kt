@@ -1,7 +1,5 @@
 package uz.ruzibekov.school_timetable.ui.screens.subject.create._components
 
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -9,19 +7,18 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import uz.ruzibekov.school_timetable.R
+import uz.ruzibekov.school_timetable.ui.screens.subject.create.listeners.CreateSubjectListeners
 import uz.ruzibekov.school_timetable.ui.theme.AppColor
 
 object CreateSubjectTopBarView {
 
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
-    fun Default() {
+    fun Default(listeners: CreateSubjectListeners) {
 
         TopAppBar(
             title = {
@@ -32,7 +29,7 @@ object CreateSubjectTopBarView {
             },
             navigationIcon = {
                 IconButton(
-                    onClick = { /*TODO*/ }
+                    onClick = { listeners.onBackStack() }
                 ) {
                     Icon(
                         painter = painterResource(id = R.drawable.ic_arrow_back),
@@ -45,7 +42,7 @@ object CreateSubjectTopBarView {
             actions = {
 
                 IconButton(
-                    onClick = { /*TODO*/ },
+                    onClick = { listeners.createNewSubject() },
                 ) {
 
                     Icon(

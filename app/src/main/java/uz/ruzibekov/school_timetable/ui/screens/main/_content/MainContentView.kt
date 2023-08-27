@@ -15,12 +15,16 @@ import uz.ruzibekov.school_timetable.ui.screens.main._components.MainTopBarView
 import uz.ruzibekov.school_timetable.ui.screens.main._fragments.HomeAssignmentsView
 import uz.ruzibekov.school_timetable.ui.screens.main._fragments.HomeTimeTableView
 import uz.ruzibekov.school_timetable.ui.screens.main.listeners.MainListeners
+import uz.ruzibekov.school_timetable.ui.screens.main.state.MainState
 
 object MainContentView {
 
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
-    fun Default(listeners: MainListeners) {
+    fun Default(
+        state: MainState,
+        listeners: MainListeners
+    ) {
 
         val navController = rememberNavController()
 
@@ -46,7 +50,7 @@ object MainContentView {
                 ) {
 
                     composable(BottomNavItem.TimeTable.route) {
-                        HomeTimeTableView.Default()
+                        HomeTimeTableView.Default(state)
                     }
 
                     composable(BottomNavItem.Assignments.route) {

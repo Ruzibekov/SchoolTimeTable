@@ -13,4 +13,5 @@ val Pink40 = Color(0xFF7D5260)
 object AppColor {
 
     val Primary = Color(0xFF2195F2)
+    val Card = Color(0xFFEFEFEF)
 }
