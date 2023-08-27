@@ -14,4 +14,5 @@ object AppColor {
 
     val Primary = Color(0xFF2195F2)
     val Card = Color(0xFFEFEFEF)
+
 }

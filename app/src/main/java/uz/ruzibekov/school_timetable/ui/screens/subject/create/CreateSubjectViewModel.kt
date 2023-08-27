@@ -20,7 +20,12 @@ class CreateSubjectViewModel @Inject constructor(
     private val scope = CoroutineScope(Dispatchers.IO)
 
     fun createNewSubject() = scope.launch {
-        val data = SubjectEntity(subject = state.name.value)
+
+        val data = SubjectEntity(
+            name = state.name.value,
+            startTime = state.startCalendar.value.timeInMillis,
+            endTime = state.endCalendar.value.timeInMillis
+        )
         dao.insert(data)
     }
 

@@ -7,5 +7,7 @@ import androidx.room.PrimaryKey
 data class SubjectEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0,
-    val subject: String
+    val name: String,
+    val startTime: Long,
+    val endTime: Long,
 )
